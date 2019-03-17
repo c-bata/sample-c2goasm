@@ -177,9 +177,4 @@ LBB0_14:
 	WORD $0xf8c5; BYTE $0x77 // vzeroupper
 	BYTE $0xc3               // ret
 
-.Lfunc_end0:
-	.size sum_float64, .Lfunc_end0-sum_float64
-
-	.ident   "Apple LLVM version 10.0.0 (clang-1000.10.44.4)"
-	.section ".note.GNU-stack", "", @progbits
 
