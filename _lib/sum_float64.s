@@ -19,12 +19,8 @@ _sum_float64:                           ## @sum_float64
 	xor	ecx, ecx
 	jmp	LBB0_11
 LBB0_1:
-	vxorps	xmm0, xmm0, xmm0
-	vmovsd	qword ptr [rdx], xmm0
-	mov	rsp, rbp
-	pop	rbp
-	vzeroupper
-	ret
+	vxorpd	xmm0, xmm0, xmm0
+	jmp	LBB0_12
 LBB0_4:
 	mov	ecx, r9d
 	and	ecx, -16

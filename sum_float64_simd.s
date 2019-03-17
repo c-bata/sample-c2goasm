@@ -17,10 +17,8 @@ TEXT ·__sum_float64(SB), $0-24
 	JMP  LBB0_11
 
 LBB0_1:
-	LONG $0xc057f8c5 // vxorps    xmm0, xmm0, xmm0
-	LONG $0x0211fbc5 // vmovsd    qword [rdx], xmm0
-	VZEROUPPER
-	RET
+	LONG $0xc057f9c5 // vxorpd    xmm0, xmm0, xmm0
+	JMP  LBB0_12
 
 LBB0_4:
 	WORD $0x8944; BYTE $0xc9     // mov    ecx, r9d
@@ -80,11 +78,9 @@ LBB0_11:
 	JNE  LBB0_11
 
 LBB0_12:
-	LONG $0x0211fbc5         // vmovsd    qword [rdx], xmm0
-	WORD $0x8948; BYTE $0xec // mov    rsp, rbp
-	BYTE $0x5d               // pop    rbp
-	WORD $0xf8c5; BYTE $0x77 // vzeroupper
-	BYTE $0xc3               // ret
+	LONG $0x0211fbc5 // vmovsd    qword [rdx], xmm0
+	VZEROUPPER
+	RET
 
 LBB0_5:
 	LONG $0xc057f9c5         // vxorpd    xmm0, xmm0, xmm0
@@ -95,4 +91,3 @@ LBB0_5:
 	WORD $0x854d; BYTE $0xc0 // test    r8, r8
 	JNE  LBB0_9
 	JMP  LBB0_10
-
