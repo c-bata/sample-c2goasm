@@ -7,5 +7,3 @@ c2goasm -a -f _lib/sum_float64.s sum_float64_simd.s
 
 c2goasm -a -f _lib/add_float32_avx2_intrinsics.s add_float32.s
 
-go test .
-go test -bench .
