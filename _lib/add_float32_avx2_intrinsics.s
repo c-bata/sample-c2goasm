@@ -1,5 +1,5 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 10, 14
+	.macosx_version_min 10, 14
 	.intel_syntax noprefix
 	.globl	_add_float32            ## -- Begin function add_float32
 	.p2align	4, 0x90
